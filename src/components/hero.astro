@@ -1,53 +1,37 @@
 ---
-import { Picture } from "astro:assets";
-import heroImage from "@/assets/hero.png";
-import Link from "@/components/ui/link.astro";
-import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets"
+import heroImage from "@/assets/hero.png"
+import HeroButtons from "@/components/ui/hero-buttons"
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
-  </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+<section class="relative min-h-screen overflow-hidden bg-background">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-12">
+      {/* Content */}
+      <div class="flex flex-col justify-center space-y-8">
+        <div>
+          <h1 class="text-5xl sm:text-6xl font-bold tracking-tight mb-6">
+            ISO/IEC 81346 – Reference Designation System for Industrial Systems
+          </h1>
+          <p class="text-xl text-muted-foreground leading-relaxed mb-8">
+        Reduce engineering errors, speed up project delivery, and create a common language across contractors, OEMs, and asset owners using ISO/IEC 81346.
+          </p>
+        </div>
 
-        Download for Free
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
-      </Link>
+        <HeroButtons />
+      </div>
+
+      {/* Image */}
+      <div class="relative flex items-center justify-center">
+        <div class="relative w-full">
+          <Image
+            src={heroImage}
+            alt="SEC-Hub systems engineering platform"
+            class="w-full h-auto rounded-lg"
+            loading="eager"
+          />
+        </div>
+      </div>
     </div>
   </div>
-</main>
+</section>
